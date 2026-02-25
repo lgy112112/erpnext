@@ -16,13 +16,20 @@
 - `activation.py` — 系统激活状态检查（引导用户完成基础设置）
 - `bulk_transaction.py` — 批量事务处理工具函数
 - `product.py` — 产品相关工具函数
-- `transaction_base.py` — 交易单据基础工具
+- `transaction_base.py` — 交易单据基础工具（AccountsController 的基类）
+- `naming.py` — 命名规则工具函数
+- `regional.py` — 地区化工具函数
 
 ## 目录结构
 ```
 utilities/
 ├── doctype/           # 4 个 DocType
 ├── report/            # 报表
+├── web_form/          # Web 表单
 ├── activation.py      # 激活检查
-└── bulk_transaction.py # 批量处理
+├── bulk_transaction.py # 批量处理
+├── naming.py          # 命名规则
+├── product.py         # 产品工具
+├── regional.py        # 地区化工具
+└── transaction_base.py # 交易单据基类
 ```

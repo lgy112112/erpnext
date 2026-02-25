@@ -58,6 +58,11 @@ Production Plan → Work Order → Job Card → Stock Entry (Manufacture)
 manufacturing/
 ├── doctype/           # 47 个 DocType
 ├── report/            # 22 个报表
+├── manufacturing_dashboard/ # 模块仪表盘
 ├── dashboard_chart/   # 仪表盘图表
+├── dashboard_fixtures.py # 仪表盘预设数据
+├── notification/      # 通知配置
+├── number_card/       # 数字卡片
+├── page/              # 自定义页面
 └── workspace/         # 工作区配置
 ```

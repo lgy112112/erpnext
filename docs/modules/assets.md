@@ -46,6 +46,10 @@
 ```
 assets/
 ├── doctype/           # 26 个 DocType
+├── report/            # 3 个报表
+├── assets_dashboard/  # 模块仪表盘
 ├── dashboard_chart/   # 仪表盘图表
+├── dashboard_fixtures.py # 仪表盘预设数据
+├── number_card/       # 数字卡片
 └── workspace/         # 工作区
 ```

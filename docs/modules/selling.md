@@ -51,8 +51,11 @@ Lead → Opportunity → Quotation → Sales Order → Delivery Note → Sales I
 selling/
 ├── doctype/           # 18 个 DocType
 ├── report/            # 23 个报表
+├── selling_dashboard/ # 模块仪表盘
 ├── dashboard_chart/   # 仪表盘图表
 ├── number_card/       # 数字卡片
 ├── page/              # 销售漏斗等页面
+├── print_format/      # 打印格式
+├── print_format_field_template/ # 打印格式字段模板
 └── workspace/         # 工作区
 ```

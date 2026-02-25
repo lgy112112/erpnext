@@ -6,7 +6,7 @@ ERPNext 最大的核心模块，实现传统复式记账系统。所有财务数
 ## 规模
 - 185 个 DocType
 - 52 个报表
-- 19 个打印格式
+- 16 个打印格式
 
 ## 核心 DocType
 
@@ -71,7 +71,9 @@ accounts/
 ├── doctype/                    # 185 个 DocType 定义
 ├── report/                     # 52 个报表
 ├── custom/                     # 对 Frappe 核心 DocType 的扩展（Address）
-├── print_format/               # 19 个打印格式
+├── print_format/               # 16 个打印格式
+├── print_format_field_template/ # 打印格式字段模板
+├── accounts_dashboard/         # 模块仪表盘
 ├── dashboard_chart/            # 仪表板图表
 ├── dashboard_chart_source/     # 图表数据源
 ├── number_card/                # 数字卡片
@@ -79,6 +81,7 @@ accounts/
 ├── page/                       # 自定义页面
 ├── letterhead/                 # 信头模板
 ├── notification/               # 通知配置
+├── test/                       # 测试
 ├── party.py                    # 客户/供应商公共逻辑
 ├── general_ledger.py           # 总账分录核心逻辑
 ├── utils.py                    # 工具函数

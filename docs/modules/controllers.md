@@ -5,12 +5,12 @@
 
 ## 继承层次
 ```
-frappe.model.Document
+TransactionBase (utilities/transaction_base.py)
   └── AccountsController (accounts_controller.py)
-        ├── BuyingController (buying_controller.py)
-        │     └── SubcontractingController (subcontracting_controller.py)
-        ├── SellingController (selling_controller.py)
         └── StockController (stock_controller.py)
+              ├── SubcontractingController (subcontracting_controller.py)
+              │     └── BuyingController (buying_controller.py)
+              └── SellingController (selling_controller.py)
 ```
 
 ## 核心控制器

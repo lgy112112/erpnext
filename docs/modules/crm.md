@@ -54,6 +54,9 @@ crm/
 ├── doctype/           # 27 个 DocType
 ├── report/            # 9 个报表
 ├── crm_dashboard/     # CRM 仪表盘
+├── dashboard_chart/   # 仪表盘图表
+├── number_card/       # 数字卡片
 ├── frappe_crm_api.py  # Frappe CRM 集成 API
+├── utils.py           # 工具函数
 └── workspace/         # 工作区
 ```

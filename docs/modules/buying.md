@@ -46,6 +46,11 @@ Material Request → Request for Quotation → Supplier Quotation
 buying/
 ├── doctype/           # 20 个 DocType
 ├── report/            # 10 个报表
+├── buying_dashboard/  # 模块仪表盘
 ├── dashboard_chart/   # 仪表盘图表
+├── number_card/       # 数字卡片
+├── page/              # 自定义页面
+├── print_format/      # 打印格式
+├── print_format_field_template/ # 打印格式字段模板
 └── workspace/         # 工作区
 ```

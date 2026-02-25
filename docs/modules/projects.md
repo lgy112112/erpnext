@@ -33,6 +33,9 @@
 projects/
 ├── doctype/           # 15 个 DocType
 ├── report/            # 5 个报表
+├── projects_dashboard/ # 模块仪表盘
 ├── dashboard_chart/   # 仪表盘图表
-└── number_card/       # 数字卡片
+├── number_card/       # 数字卡片
+├── web_form/          # Web 表单
+└── workspace/         # 工作区
 ```
