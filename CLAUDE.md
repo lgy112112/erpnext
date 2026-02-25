@@ -143,7 +143,8 @@ ERPNext 支持按业务类型定制界面和默认设置：
 - 默认门户角色
 
 ## 模块文档
-各模块详细说明见 `docs/modules/` 目录。
+- 模块说明：`docs/modules/`
+- 流程修改导航：`docs/flows/`（Sell-to-Cash / Procure-to-Pay / Inventory / Manufacturing）
 
 ## 常用命令
 ```bash

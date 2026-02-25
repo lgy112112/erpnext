@@ -1,4 +1,6 @@
-# ERPNext 模块索引
+# ERPNext 模块索引（核心业务 + 变更支撑）
+
+> 说明：本目录不是 `erpnext/` 顶层目录的全量镜像，而是优先覆盖“业务流程修改”和“核心联动排查”常用模块。
 
 ## 核心业务模块
 
@@ -42,6 +44,41 @@
 | [批量事务](bulk_transaction.md) | `bulk_transaction/` | 批量单据生成 |
 | [Web 门户](portal.md) | `portal/` | 客户/供应商自助门户 |
 | [购物车](shopping_cart.md) | `shopping_cart/` | 电商购物车与在线下单 |
+
+## 变更支撑模块（建议给 LLM 一并加载）
+
+| 模块 | 目录 | 说明 |
+|------|------|------|
+| [迁移补丁](patches.md) | `patches/` | 数据库迁移脚本与版本补丁入口 |
+| [测试入口](tests.md) | `tests/` | 根级测试与跨模块回归检查 |
+| [前端静态资源](public.md) | `public/` | JS Bundle、表单控制器、前端联动代码 |
+| [模板系统](templates.md) | `templates/` | 邮件/打印/Web 页面模板与页面脚本 |
+| [网站路由页面](www.md) | `www/` | `www/` 路由页面实现（Python + HTML/JS/CSS） |
+| [启动与通知](startup.md) | `startup/` | Boot、通知、首页卡片与过滤 |
+| [领域预设](domains.md) | `domains/` | 不同行业域的界面/功能预设 |
+| [模块配置](config.md) | `config/` | 模块级配置入口（当前较少） |
+| [工作区侧栏](workspace_sidebar.md) | `workspace_sidebar/` | 工作区侧边栏 JSON 配置 |
+| [桌面图标](desktop_icon.md) | `desktop_icon/` | 桌面模块图标与分组配置 |
+| [报表中心配置](report_center.md) | `report_center/` | 报表中心 JSON 配置 |
+
+## 工程与国际化支撑模块（按需加载）
+
+| 模块 | 目录 | 说明 |
+|------|------|------|
+| [变更日志](change_log.md) | `change_log/` | 历史版本发布说明与功能变更记录 |
+| [CLI 命令入口](commands.md) | `commands/` | Bench/命令扩展入口（当前内容很少） |
+| [翻译提取器](gettext.md) | `gettext/` | i18n 文本提取辅助代码 |
+| [本地化资源](locale.md) | `locale/` | 多语言 `.po` / `.pot` 翻译文件 |
+
+## 流程修改导航（新增）
+
+当目标是“修改主业务流程”，建议同时阅读 `docs/flows/`：
+
+- `docs/flows/README.md` — 流程导航总览
+- `docs/flows/sell_to_cash.md` — 销售到回款（S2C）
+- `docs/flows/procure_to_pay.md` — 采购到付款（P2P）
+- `docs/flows/inventory_transactions.md` — 库存交易与估值联动
+- `docs/flows/manufacturing_execution.md` — 制造执行与库存/采购联动
 
 ## 模块间依赖关系
 

@@ -78,3 +78,44 @@ TransactionBase (utilities/transaction_base.py)
 
 ### trends.py
 趋势分析报表的公共逻辑。
+
+## 修改业务流程时的代码入口（方法级导航）
+
+下面这组入口是给“改流程”用的，不是完整 API 列表。优先从具体单据类的生命周期方法进入，再回看控制器公共逻辑。
+
+### 1) 单据生命周期入口（最常改）
+- `validate()`：字段校验、默认值、联动检查（提交前多次触发）
+- `before_submit()`：提交前最终校验/准备
+- `on_submit()`：提交后的核心副作用（状态推进、GL/SLE、回写上游单据）
+- `before_cancel()`：取消前校验（关联单据、权限、是否允许回滚）
+- `on_cancel()`：回滚副作用（状态回退、冲销/删除联动数据）
+- `update_status()` / `set_status()`：状态机更新
+
+### 2) 状态流转公共逻辑
+- `status_updater.py`：
+  - `update_prevdoc_status()` — 回写上游单据状态/完成度
+  - `set_status()` — 统一状态设置
+  - `validate_qty()` — 前后单据数量约束校验
+  - `update_billing_status()` — 开票状态回写
+
+### 3) 税费与金额计算公共逻辑
+- `taxes_and_totals.py`：
+  - `_calculate()` — 税费与金额总计算流程
+  - `initialize_taxes()` — 税费行初始化
+  - `determine_exclusive_rate()` — 含税/未税价格换算
+
+### 4) 会计/库存副作用公共逻辑
+- `accounts_controller.py`：
+  - `validate()` — 会计维度、税费、金额合法性等校验入口
+  - `before_cancel()` / `on_cancel()` — 取消时会计联动回滚
+- `stock_controller.py`：
+  - `validate()` — 库存相关通用校验
+  - `make_sl_entries()` — 写入库存账本（SLE）
+  - `make_gl_entries()` / `get_gl_entries()` — 永续盘存下的会计分录联动
+
+## 改流程的建议顺序
+1. 先定位目标单据类（如 `sales_order.py` / `purchase_receipt.py`）的 `validate/on_submit/on_cancel`
+2. 再确认其父类控制器（`SellingController` / `BuyingController` / `StockController` / `AccountsController`）是否已有公共逻辑
+3. 检查 `status_updater.py` 是否会覆盖你的状态变更
+4. 检查 `taxes_and_totals.py` 是否影响金额字段
+5. 检查 `hooks.py` 的 `doc_events` / `regional_overrides` 是否追加副作用
